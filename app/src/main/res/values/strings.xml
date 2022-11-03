@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Text Scanner</string>
+
+    <string name="get_chat_sticker" translatable="false">Get Amazing chat Stickers for WhatsApp</string>
+    <string name="get_chat_sticker_desc" translatable="false">We have very Nice Stickers</string>
+    <string name="mrec" translatable="false">d30e9332da4dbc47</string>
+    <string name="soundinfo" translatable="false">This is a Great Sound App For You. The Sound Meter Has All Feature of Professional Sound Meter
+	, Display Sound Graph and Switch Theme. You Can Now Measure Sound Level With Your Smartphone</string>
 </resources>
