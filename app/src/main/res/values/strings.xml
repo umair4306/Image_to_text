@@ -6,4 +6,5 @@
     <string name="mrec" translatable="false">d30e9332da4dbc47</string>
     <string name="soundinfo" translatable="false">This is a Great Sound App For You. The Sound Meter Has All Feature of Professional Sound Meter
 	, Display Sound Graph and Switch Theme. You Can Now Measure Sound Level With Your Smartphone</string>
+    <string name="imageDescription">Capture or choose an image from gallery to scanner the text from the picture.</string>
 </resources>
