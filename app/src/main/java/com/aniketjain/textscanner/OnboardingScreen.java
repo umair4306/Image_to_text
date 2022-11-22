@@ -135,4 +135,10 @@ public class OnboardingScreen extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        MyApplication.isFirstTime = true;
+    }
+
 }

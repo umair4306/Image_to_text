@@ -74,25 +74,24 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String s = binding.dataTv.getText().toString();
-                    shareTextOnly(s);
+                shareTextOnly(s);
 
 
             }
         });
 
+
         binding.saveData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                s =  binding.dataTv.getText().toString();
-                if (s.equals("Capture or choose an image from gallery to scanner the text from the picture.")){
+                s = binding.dataTv.getText().toString();
+                if (s.equals("Capture or choose an image from gallery to scanner the text from the picture.")) {
                     Toast.makeText(MainActivity.this, "Please Scan Text From Image ", Toast.LENGTH_SHORT).show();
-                }
-                else if(paperList.size()>= 50){
+                } else if (paperList.size() >= 50) {
                     paperList.remove(0);
-                }
-                else{
+                } else {
                     paperList.add(s);
-                    Paper.book().write("history",paperList);
+                    Paper.book().write("history", paperList);
                     Log.d("1234567", paperList.toString());
                     Toast.makeText(MainActivity.this, "Text Saved", Toast.LENGTH_SHORT).show();
                 }
@@ -156,7 +155,6 @@ public class MainActivity extends AppCompatActivity {
             binding.dataTv.setText(stringBuilder.toString());
 
 
-
 //            binding.captureBtn.setText("Retake");
 //            binding.copyBtn.setVisibility(View.VISIBLE);
         }
@@ -175,36 +173,37 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = null;
-            switch (item.getItemId()) {
-                case R.id.history:
-                    startActivity(new Intent(MainActivity.this,History.class));
-                    break;
+        switch (item.getItemId()) {
+            case R.id.history:
+                startActivity(new Intent(MainActivity.this, History.class));
+                binding.dataTv.setText("Capture or choose an image from gallery to scanner the text from the picture.");
+                break;
 
-                case R.id.Rate_us:
-                    Uri uri = Uri.parse(Constant.Rate_us_Link); // missing 'http://' will cause crashed
-                    intent = new Intent(Intent.ACTION_VIEW, uri);
-                    startActivity(intent);
-                    break;
+            case R.id.Rate_us:
+                Uri uri = Uri.parse(Constant.Rate_us_Link); // missing 'http://' will cause crashed
+                intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+                break;
 
-                case R.id.Privacy_Policy:
-                    Uri uri1 = Uri.parse(Constant.Policy_Link); // missing 'http://' will cause crashed
-                    Intent intent1 = new Intent(Intent.ACTION_VIEW, uri1);
-                    startActivity(intent1);
-                    break;
+            case R.id.Privacy_Policy:
+                Uri uri1 = Uri.parse(Constant.Policy_Link); // missing 'http://' will cause crashed
+                Intent intent1 = new Intent(Intent.ACTION_VIEW, uri1);
+                startActivity(intent1);
+                break;
 
-                case R.id.AppInfo:
-                    startActivity(new Intent(MainActivity.this, AppInfo.class));
-                    break;
+            case R.id.AppInfo:
+                startActivity(new Intent(MainActivity.this, AppInfo.class));
+                break;
 
-                case R.id.More_Apps:
+            case R.id.More_Apps:
 
-                    Uri uri2 = Uri.parse(Constant.More_Apps_Link); // missing 'http://' will cause crashed
-                    Intent intent2 = new Intent(Intent.ACTION_VIEW, uri2);
-                    startActivity(intent2);
-                    break;
+                Uri uri2 = Uri.parse(Constant.More_Apps_Link); // missing 'http://' will cause crashed
+                Intent intent2 = new Intent(Intent.ACTION_VIEW, uri2);
+                startActivity(intent2);
+                break;
 
 
-            }
+        }
         return super.onOptionsItemSelected(item);
 
     }
@@ -289,6 +288,12 @@ public class MainActivity extends AppCompatActivity {
         MRECAdview.loadAd();
         MRECAdview.startAutoRefresh();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        MyApplication.isFirstTime = true;
     }
 
 }

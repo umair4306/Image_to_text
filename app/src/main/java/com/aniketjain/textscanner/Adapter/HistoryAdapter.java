@@ -47,7 +47,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.viewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HistoryAdapter.viewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HistoryAdapter.viewHolder holder, @SuppressLint("RecyclerView") int position) {
 
 
         String s = list.get(position);
